@@ -7,10 +7,11 @@ http.createServer((req,res)=>{
   function returnUsername(){
     if(req.url != '/favicon.ico'){
       const result = url.parse(req.url,true)
-
-      console.log(url.format(result));
-      return result.query.userName
+      console.log(result);
+      return result.path
     }
+
+    // return result.query.userName
   }
 
 
@@ -22,4 +23,4 @@ http.createServer((req,res)=>{
 
   res.end()
 
-}).listen(3000)
+}).listen(8000)
